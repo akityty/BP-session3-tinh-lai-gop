@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Lãi Gộp Ngân Hàng</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<h3>Tính Lãi Kép</h3>
+<p>Số Tiền Ban Đầu</p>
+<input type="number" id="soTien" value="">
+<p>Lãi Suất Hàng Năm(%)</p>
+<input type="number"id="laiSuat" value="" >
+<p> Số Năm</p>
+<input type="number" id="soNam" value="">
+<p>Số Lần Gộp Lãi</p>
+<input type="number"id="soLan" value="">
+<button type="button" onclick="tinh()">Tính</button>
+<br>
+<p id = "kq"></p>
+
+<script>
+//     Công thức tính lãi kép
+//     Lãi kép được tính dựa trên công thức sau:
+//
+// f=P(1+i/m)^n-m
+//         P: số tiền vốn ban đầu
+//     i: lãi suất hàng năm (ví dụ lãi 10% thì i = 0.1)
+//     n: số năm
+//     m: số lần ghép lãi trong năm
+//     Fn: số tiền nhận được sau n năm
+function tinh() {
+    let p = parseFloat(document.getElementById("soTien").value);
+    let i = parseFloat(document.getElementById("laiSuat").value);
+    let n = parseFloat(document.getElementById("soNam").value);
+    let m = parseFloat(document.getElementById("soLan").value);
+       let Fn = Math.pow((p * (1 + i / m)), (n*m));
+    document.getElementById("kq").innerText = Fn;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện Tích Hình Vuông</title>
+</head>
+<body>
+Nhập Cạnh Hình Vuông(m):
+<input type="number"id="nhap">
+<button type="button"onclick="chuyen()">Chuyển</button>
+<br>
+<p id="ketqua"></p>
+<script>
+    function chuyen() {
+        let a=parseFloat(document.getElementById("nhap").value);
+        document.getElementById("ketqua").innerText = "Diện Tích Là: "+a*a+" mét vuông";
+    }
+</script>
+
+</body>
+</html>

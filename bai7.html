@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải Phương Tình Bậc 2</title>
+</head>
+<body>
+<h3>ax^2+b+c=0</h3>
+nhâp a:
+<input type="number"id="nhapa">
+<br>
+nhập b:
+<input type="number"id="nhapb">
+<br>
+nhập c:
+<input type = "number"id = "nhapc">
+<br>
+<button type="button"onclick="chuyen()">Tính</button>
+<br>
+<p id="del"></p>
+<br>
+<p id="kq1"></p>
+<p id="kq2"></p>
+
+<script>
+    function chuyen() {
+        let a = parseFloat(document.getElementById("nhapa").value);
+        let b = parseFloat(document.getElementById("nhapb").value);
+        let c = parseFloat(document.getElementById("nhapb").value);
+        let delta = b*b -(4*a*c);
+        let x = 0.0;
+        let x1=0.0,x2=0.0;
+        if(a===0&&b===0&&c===0) {
+            document.getElementById("kq1").innerText = "phương trình vô nghiệm";
+        }
+       else if (delta<0){
+            document.getElementById("del").innerText = "delta = "+delta;
+            document.getElementById("kq1").innerText = "phương trình vô nghiệm";
+        }
+        else if(delta===0){
+            x = -b/(2*a);
+            document.getElementById("del").innerText = "delta = "+delta;
+            document.getElementById("kq1").innerText = "nghiệm của phương trình là x1 = x2 = "+x;
+        }
+        else if(delta>0){
+            x1=(-b-Math.sqrt(delta))/(2*a);
+            x2= (-b+Math.sqrt(delta))/(2*a);
+            document.getElementById("del").innerText = "delta = "+delta;
+            document.getElementById("kq1").innerText = "nghiệm của phương trình là x1 = "+x1+" x2= "+x2;
+        }
+
+    }
+</script>
+</body>
+</html>

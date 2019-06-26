@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải Phương Trình Bậc 1</title>
+</head>
+<body>
+<h3>ax+b=0</h3>
+nhâp a:
+<input type="number"id="nhapa">
+<br>
+nhập b:
+<input type="number"id="nhapb">
+<button type="button"onclick="chuyen()">Tính</button>
+<br>
+<p id="kq"></p>
+<script>
+    function chuyen() {
+        let a = parseFloat(document.getElementById("nhapa").value);
+        let b = parseFloat(document.getElementById("nhapb").value);
+        let nghiem;
+        if (a === 0 && b === 0) {
+            document.getElementById("kq").innerText = "Làm gì có phương trình nào a=0,b=0";
+        } else if (a === 0 && b != 0) {
+            document.getElementById("kq").innerText = "Phương trình vô nghiệm";
+        } else if (a != 0 && b === 0) {
+            document.getElementById("kq").innerText = "Phương trình có  nghiệm là x = 0";
+        }
+        else{
+            nghiem = -(b/a);
+            document.getElementById("kq").innerText = "Phương trình có  nghiệm là x = "+nghiem;
+        }
+
+    }
+        </script>
+</body>
+</html>

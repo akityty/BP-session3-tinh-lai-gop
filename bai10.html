@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Giá bán lẻ điện sinh hoạt-->
+<!--Bậc 1: Cho kWh từ 0 – 50	1.549-->
+<!--Bậc 2: Cho kWh từ 51 – 100	1.600-->
+<!--Bậc 3: Cho kWh từ 101 – 200	1.858-->
+<!--Bậc 4: Cho kWh từ 201 – 300	2.340-->
+<!--Bậc 5: Cho kWh từ 301 – 400	2.615-->
+<!--Bậc 6: Cho kWh từ 401 trở lên	2.701-->
+Nhập Tổng Số Lượng Điện Dùng Trong Tháng (kw):
+<input type="number"id="nhap">
+<button type="button"onclick="chuyen()">Chuyển</button>
+<br>
+<p id="kq"></p>
+<script>
+    function chuyen() {
+        let soDien = parseFloat(document.getElementById("nhap").value);
+        let muc1 = 1549, muc2 = 1600, muc3 = 1858, muc4 = 2340, muc5 = 2.615, muc6 = 2701;
+        let vat = 1.1;
+        if (soDien >= 0 && soDien <= 50) {
+            document.getElementById("kq").innerText = "Tổng Tiền Điện Là: " + soDien * muc1 * vat + " VND";
+        }
+        else if(soDien>50 && soDien<=100){
+            document.getElementById("kq").innerText = "Tổng Tiền Điện Là: " + soDien * muc2 * vat + " VND";
+        }
+        else if(soDien>100 && soDien<=200){
+            document.getElementById("kq").innerText = "Tổng Tiền Điện Là: " + soDien * muc3 * vat + " VND";
+        }
+        else if(soDien>200 && soDien<=300){
+            document.getElementById("kq").innerText = "Tổng Tiền Điện Là: " + soDien * muc4 * vat + " VND";
+        }
+        else if(soDien>300 && soDien<=400){
+            document.getElementById("kq").innerText = "Tổng Tiền Điện Là: " + soDien * muc5 * vat + " VND";
+        }
+        else if(soDien>400){
+            document.getElementById("kq").innerText = "Tổng Tiền Điện Là: " + soDien * muc6 * vat + " VND";
+        }
+    }
+</script>
+</body>
+</html>

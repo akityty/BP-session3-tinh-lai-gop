@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện Tích Hình Chữ Nhật</title>
+</head>
+<body>
+Nhập Giá Trị Cạnh A,B:
+<input type="number"id="nhapa">
+<input type="number"id="nhapb">
+<button type="button"onclick="chuyen()">Tính</button>
+<br>
+<p id="ketqua"></p>
+<script>
+    function chuyen() {
+        let a = document.getElementById("nhapa").value;
+        let b = document.getElementById("nhapb").value;
+        document.getElementById("ketqua").innerText = "Diện Tích Là: "+a*b+" mét vuông";
+    }
+</script>
+
+</body>
+</html>

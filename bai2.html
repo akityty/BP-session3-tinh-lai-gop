@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển met sang feet</title>
+</head>
+<body>
+<!--ft =m * 3.2808-->
+<input type="number"id="nhap">
+<button type="button"onclick="chuyen1()">Chuyển</button>
+<p id ="kq"></p>
+<br>
+<script>
+    function chuyen1(){
+
+    let m= parseFloat(document.getElementById("nhap").value);
+    document.getElementById("kq").innerText = m+" m = " + m*3.2808+ " feet";}
+</script>
+</body>
+</html>

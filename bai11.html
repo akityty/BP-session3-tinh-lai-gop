@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thuế Thu Nhập Cá Nhân</title>
+    <style>
+        h3{
+            display: block;
+            font-size: 2em;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            margin-left: 450px;
+            margin-right: 0;
+            font-weight: lighter;
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+
+<h3>Tính Thuế Thu Nhập Cá Nhân</h3>
+<div>
+    <p>Tổng Thu Nhập</p>
+    <input type="number" id="tongThuNhap"value=""/>
+<!--    <h4>Các Khoản Phụ Cấp và Giảm Trừ</h4>-->
+    <p>Phụ cấp điện thoai, tiền xăng,công tác phí</p>
+    <input type="number" id="phuCapDienThoaiXangXe"value=""/>
+    <p>phụ cấp trang phục</p>
+    <input type="number" id="phuCapTrangPhuc"value=""/>
+    <p>Phụ Cấp Ăn Trưa</p>
+    <input type="number" id="phuCapAnTrua"value=""/>
+    <br>
+    <br>
+    <select id = "chon" value="selectBox(this)">
+    <option>Bạn Là?</option>
+    <option id = "hdTren3Thang" label="HĐLĐ Trên 3 Tháng" value="hdlau"></option>
+    <option label="HĐLĐ Dưới 3 Tháng hoặc Không" value="hdngan"></option>
+    <option label="Cá nhân không cư trú" value="khonghd"></option>
+    </select>
+    <p id="kq"></p>
+    <button type="button" onclick="tinh()">Tính</button>
+</div>
+<script>
+    function selectBox(x) {
+        return x.selected
+    }
+    function tinh() {
+        let tongThuNhap = document.getElementById("tongThuNhap").value;
+        let phuCapDienThoaiXangXe = document.getElementById("phuCapDienThoaiXangXe").value;
+        let phuCapTrangPhuc = document.getElementById("phuCapTrangPhuc").value;
+        let phuCapAnTrua = document.getElementById("phuCapAnTrua").value;
+        let thuNhapCaNhan = 0;
+        let TNTT = tongThuNhap - phuCapAnTrua - phuCapDienThoaiXangXe - phuCapTrangPhuc;
+       switch (document.getElementById('chon').value) {
+           case 'hdlau':
+               if (tongThuNhap > 0 && tongThuNhap <= 5000000) {
+                   thuNhapCaNhan = TNTT * 0.05;
+               } else if (tongThuNhap > 5000000 && tongThuNhap <= 10000000) {
+                   thuNhapCaNhan = TNTT * 0.1 - 250000;
+               } else if (tongThuNhap > 10000000 && tongThuNhap <= 18000000) {
+                   thuNhapCaNhan = TNTT * 0.15 - 750000;
+               } else if (tongThuNhap > 18000000 && tongThuNhap <= 32000000) {
+                   thuNhapCaNhan = TNTT * 0.2 - 1650000;
+               } else if (tongThuNhap > 32000000 && tongThuNhap <= 52000000) {
+                   thuNhapCaNhan = TNTT * 0.25 - 3250000;
+               } else if (tongThuNhap > 52000000 && tongThuNhap <= 80000000) {
+                   thuNhapCaNhan = TNTT * 0.3 - 5850000;
+               } else if (tongThuNhap > 80000000) {
+                   thuNhapCaNhan = TNTT * 0.35 - 9850000;
+               }
+               document.getElementById("kq").innerText = "Thuế Thu Nhập Cá Nhân Của Bạn Là: " + thuNhapCaNhan + " VND";
+               break;
+           case 'hdngan':
+               thuNhapCaNhan = TNTT*0.1;
+               document.getElementById("kq").innerText = "Thuế Thu Nhập Cá Nhân Của Bạn Là: " + thuNhapCaNhan + " VND";
+               break;
+           case 'khonghd':
+               thuNhapCaNhan = TNTT*0.2;
+               document.getElementById("kq").innerText = "Thuế Thu Nhập Cá Nhân Của Bạn Là: " + thuNhapCaNhan + " VND";
+               break;
+       }
+    }
+</script>
+
+</body>
+</html>

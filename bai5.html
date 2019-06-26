@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Diện Tích Tam Giác Vuông</title>
+</head>
+<body>
+Nhập 2 cạnh của tam giác vuông:
+<input type="number"id="nhapa">
+<input type="number"id="nhapb">
+<button type="button"onclick="chuyen()">Tính</button>
+<br>
+<p id="kq"></p>
+<script>
+    function chuyen(){
+    let a=document.getElementById("nhapa").value;
+  let   b=document.getElementById("nhapb").value;
+    let kq = (a*b)/2;
+    document.getElementById("kq").innerText="Diện Tích Tam Giác Là: "+kq;}
+</script>
+</body>
+</html>

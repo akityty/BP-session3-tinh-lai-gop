@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm Tra Cạnh Tam Giác</title>
+</head>
+<body>
+<!--a,b,c > 0-->
+<!--a + b > c-->
+<!--a + c > b-->
+<!--b + c > a-->
+<input type="number"id="nhapa">
+<br>
+<input type="number"id="nhapb">
+<br>
+<input type="number"id="nhapc">
+<br>
+<button type="button"onclick="chuyen()">Tính</button>
+<br>
+<p id="kq"></p>
+<script>
+    function chuyen() {
+        let a = parseInt(document.getElementById("nhapa").value);
+        let b = parseInt(document.getElementById("nhapb").value);
+        let c = parseInt(document.getElementById("nhapc").value);
+        if (a > 0 && b > 0 && c > 0 && ((a + b) > c) && ((a + c) > b) && ((b + c) > a)) {
+            document.getElementById("kq").innerText=a + " " + b + " " + c + " là cạnh của tam giác";
+        } else
+            document.getElementById("kq").innerText=a + " " + b + " " + c + " không là cạnh của tam giác";
+    }
+</script>
+</body>
+</html>

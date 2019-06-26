@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển Độ C sang Độ F</title>
+</head>
+<body>
+<!--°C  x  9/5 + 32 = °F-->
+<!--c=5*(f-32)/9-->
+<div>
+    Độ C:
+    <input type="number"id="nhap">
+    <button type="button"onclick="chuyen()">Chuyển</button>
+
+    <br>
+    <p id="ketqua"></p>
+</div>
+<script>
+    function chuyen() {
+        let a = document.getElementById("nhap").value;
+        let kq = ( 9*a)/5 + 32;
+        document.getElementById("ketqua").innerText = kq+" độ F";
+    }
+ </script>
+</body>
+</html>
